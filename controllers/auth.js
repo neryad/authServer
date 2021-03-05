@@ -78,18 +78,16 @@ const loginUser = async (req, res = response) => {
   }
 };
 
-const renewToken = (req, res) => {
-  // const token = req.header('x-token');
-  // if (!token) {
-  //   return res.status(401).json({
-  //     ok: false,
-  //     msg: 'token invalid - no access denied',
-  //   });
-  // }
+const renewToken = async (req, res) => {
+  const { uid, name } = req;
+
+  const token = await generateJWT(uid, name);
 
   return res.status(401).json({
     ok: true,
-    msg: 'renew',
+    uid,
+    name,
+    token,
   });
 };
 
