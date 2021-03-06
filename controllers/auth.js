@@ -68,6 +68,8 @@ const loginUser = async (req, res = response) => {
       ok: true,
       msg: 'Welcome',
       token,
+      uid: userDb.id,
+      name: userDb.name,
     });
   } catch (error) {
     console.log(error);
