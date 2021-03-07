@@ -6,7 +6,7 @@ require('dotenv').config();
 //** Create server
 const app = express();
 
-//* Db conection
+//* Db connection
 
 dbConnection();
 
